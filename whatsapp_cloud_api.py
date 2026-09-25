@@ -28,7 +28,8 @@ GOOGLE_MAPS_LINK = "https://maps.google.com/?q=Align+and+Glow+Dental+Clinic+Bana
 
 
 def load_env():
-    env = {}
+    """Loads environment variables from os.environ, merged with .env file if present."""
+    env = dict(os.environ)
     if os.path.exists(ENV_PATH):
         with open(ENV_PATH, "r", encoding="utf-8") as f:
             for line in f:
